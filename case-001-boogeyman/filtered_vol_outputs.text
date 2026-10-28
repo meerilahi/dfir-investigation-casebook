@@ -1,0 +1,50 @@
+(.env) taimoor@taimoor-HP-EliteBook-830-G5:~/Repositories/THM-Boogeyman$ vol -f WKSTN-2961.raw windows.pslist.PsList
+Volatility 3 Framework 2.28.2
+Progress:  100.00		PDB scanning finished                                                                                              
+PID	PPID	ImageFileName	Offset(V)	Threads	Handles	SessionId	Wow64	CreateTime	ExitTime	File output
+1440	596	OUTLOOK.EXE	0xe58f87c8a080	22	-	3	False	2023-08-21 14:09:04.000000 UTC	N/A	Disabled
+1124	1440	WINWORD.EXE	0xe58f81150080	18	-	3	False	2023-08-21 14:12:31.000000 UTC	N/A	Disabled
+4260	1124	wscript.exe	0xe58f864ca0c0	6	-	3	False	2023-08-21 14:12:47.000000 UTC	N/A	Disabled
+6216	4260	updater.exe	0xe58f87ac0080	18	-	3	False	2023-08-21 14:12:48.000000 UTC	N/A	Disabled
+4464	6216	conhost.exe	0xe58f84bd1080	5	-	3	False	2023-08-21 14:14:03.000000 UTC	N/A	Disabled
+6332	6932	DumpIt.exe	0xe58f87a870c0	3	-	3	True	2023-08-21 14:14:25.000000 UTC	N/A	Disabled
+
+(.env) taimoor@taimoor-HP-EliteBook-830-G5:~/Repositories/THM-Boogeyman$ vol -f WKSTN-2961.raw windows.cmdline.CmdLine
+Volatility 3 Framework 2.28.2
+Progress:  100.00		PDB scanning finished                        
+PID	Process	Args
+1440	OUTLOOK.EXE	"C:\Program Files\Microsoft Office\Root\Office16\OUTLOOK.EXE" /eml "C:\Users\maxine.beck\Desktop\Resume - Application for Junior IT Analyst Role.eml"
+1124	WINWORD.EXE	"C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE" /n "C:\Users\maxine.beck\AppData\Local\Microsoft\Windows\INetCache\Content.Outlook\WQHGZCFI\Resume_WesleyTaylor (002).doc
+6720	SearchFilterHo	-
+4336	WINWORD.EXE	-
+4776	WmiPrvSE.exe	C:\Windows\system32\wbem\wmiprvse.exe
+6592	SearchProtocol	-
+4260	wscript.exe	wscript.exe C:\ProgramData\update.js
+6216	updater.exe	"C:\Windows\Tasks\updater.exe" 
+4464	conhost.exe	\??\C:\Windows\system32\conhost.exe 0x4
+6332	DumpIt.exe	.\DumpIt.exe
+
+
+(.env) taimoor@taimoor-HP-EliteBook-830-G5:~/Repositories/THM-Boogeyman$ vol -f WKSTN-2961.raw windows.pstree.PsTree
+Volatility 3 Framework 2.28.2
+Progress:  100.00		PDB scanning finished                        
+PID	PPID	ImageFileName	Offset(V)	Threads	Handles	SessionId	Wow64	CreateTime	ExitTime	Audit	Cmd	Path
+** 596	3948	explorer.exe	0xe58f87e31080	46	-	3	False	2023-08-21 14:06:34.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\explorer.exe	C:\Windows\Explorer.EXE	C:\Windows\Explorer.EXE
+*** 1440	596	OUTLOOK.EXE	0xe58f87c8a080	22	-	3	False	2023-08-21 14:09:04.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE	"C:\Program Files\Microsoft Office\Root\Office16\OUTLOOK.EXE" /eml "C:\Users\maxine.beck\Desktop\Resume - Application for Junior IT Analyst Role.eml"C:\Program Files\Microsoft Office\Root\Office16\OUTLOOK.EXE
+**** 1124	1440	WINWORD.EXE	0xe58f81150080	18	-	3	False	2023-08-21 14:12:31.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Microsoft Office\root\Office16\WINWORD.EXE	"C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE" /n "C:\Users\maxine.beck\AppData\Local\Microsoft\Windows\INetCache\Content.Outlook\WQHGZCFI\Resume_WesleyTaylor (002).doc	C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE
+***** 4336	1124	WINWORD.EXE	0xe58f87547080	0	-	3	False	2023-08-21 14:12:34.000000 UTC	2023-08-21 14:12:45.000000 UTC	\Device\HarddiskVolume2\Program Files\Microsoft Office\root\Office16\WINWORD.EXE	-	-
+***** 4260	1124	wscript.exe	0xe58f864ca0c0	6	-	3	False	2023-08-21 14:12:47.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wscript.exewscript.exe C:\ProgramData\update.js	C:\Windows\SYSTEM32\wscript.exe
+****** 6216	4260	updater.exe	0xe58f87ac0080	18	-	3	False	2023-08-21 14:12:48.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\Tasks\updater.exe	"C:\Windows\Tasks\updater.exe" 	C:\Windows\Tasks\updater.exe
+******* 4464	6216	conhost.exe	0xe58f84bd1080	5	-	3	False	2023-08-21 14:14:03.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\conhost.exe\??\C:\Windows\system32\conhost.exe 0x4	C:\Windows\system32\conhost.exe
+*** 6132	596	msedge.exe	0xe58f876d7080	0	-	3	False	2023-08-21 14:06:51.000000 UTC	2023-08-21 14:06:56.000000 UTC	\Device\HarddiskVolume2\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	-	-
+*** 6932	596	cmd.exe	0xe58f87c230c0	1	-	3	False	2023-08-21 14:09:01.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\cmd.exe		
+**** 6332	6932	DumpIt.exe	0xe58f87a870c0	3	-	3	True	2023-08-21 14:14:25.000000 UTC	N/A	\Device\HarddiskVolume2\Users\maxine.beck\Downloads\DumpIt.exe	.\DumpIt.exe	C:\Users\maxine.beck\Downloads\DumpIt.exe
+**** 6052	6932	conhost.exe	0xe58f87677080	4	-	3	False	2023-08-21 14:09:01.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\conhost.exe--
+(.env) taimoor@taimoor-HP-EliteBook-830-G5:~/Repositories/THM-Boogeyman$ vol -f WKSTN-2961.raw windows.netstat.NetStat
+Volatility 3 Framework 2.28.2
+Progress:  100.00		PDB scanning finished                        
+Offset	Proto	LocalAddr	LocalPort	ForeignAddr	ForeignPort	State	PID	Owner	Created
+
+0xe58f874eabf0	TCPv4	10.10.49.181	63286	20.54.36.229	443	ESTABLISHED	420	svchost.exe	2023-08-21 14:14:07.000000 UTC
+0xe58f86bf2820	TCPv4	10.10.49.181	63243	20.189.173.10	443	CLOSED	1124	WINWORD.EXE	2023-08-21 14:12:39.000000 UTC
+0xe58f87603990	TCPv4	10.10.49.181	3389	10.4.29.242	63005	ESTABLISHED	388	svchost.exe	2023-08-21 14:06:14.000000 UTC
