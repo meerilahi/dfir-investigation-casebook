@@ -17,23 +17,6 @@ An HR specialist opened a job-application email carrying `Resume_WesleyTaylor.do
 
 Not established: what `updater.exe` did, whether persistence was actually registered, and any data theft or lateral movement.
 
-## Contents
-
-| File | Description |
-|---|---|
-| `report.pdf` / `report.docx` | Full investigation report (export of the case report) |
-| `README.md` | This file |
-
-Suggested layout for supporting material (evidence itself should not be committed):
-
-```
-case-001-thm-boogeyman/
-├── README.md
-├── report.pdf
-├── iocs.csv          # indicators from report section 5
-└── notes/            # command output, Volatility plugin logs
-```
-
 ## Evidence
 
 Hashes are SHA-256. Original files are not stored in this repo.
